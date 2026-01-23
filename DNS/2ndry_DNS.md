@@ -140,7 +140,7 @@ dig @192.168.1.11 www.example.local
 
 If the secondary responds correctly, redundancy is working.
 
-
+-------------------
 - 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 - 👉Youtube Channel: http://www.youtube.com/@engrm.shaban5099
 ---
