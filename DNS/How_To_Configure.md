@@ -376,3 +376,8 @@ options {
 3. Restart `named` and point clients to your server. It will cache and forward queries to upstream DNS.
 
 ---
+
+-------------------
+- 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
+- 👉Youtube Channel: http://www.youtube.com/@engrm.shaban5099
+---
