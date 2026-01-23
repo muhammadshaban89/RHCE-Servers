@@ -176,6 +176,14 @@ ns2 IN  A   192.168.1.11
 mail IN A   192.168.1.50
 www  IN A   192.168.1.20
 
+; -----------------------------
+;   PTR Records (Reverse DNS)
+; -----------------------------
+150      IN  PTR   ns1.example.local.
+11      IN  PTR   ns2.example.local.
+20      IN  PTR   www.example.local.
+50      IN  PTR   mail.example.local.
+
 ; --- MX Records ---
 @    IN  MX 10 mail.example.local.
 
