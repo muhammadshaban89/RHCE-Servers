@@ -60,6 +60,31 @@ Key ideas:
 
 ---
 
+## How many DNS root servers exist?
+
+Two different numbers matter when talking about DNS root servers, and people often mix them up.  
+
+### **1. There are 13 *named* DNS root servers**
+These are the famous **A–M root servers**.  
+They appear as 13 entries in the DNS root zone because of historical and technical limits (mainly UDP packet size).  
+
+
+###  **2. But there are *thousands* of physical root server instances**
+Thanks to **anycast routing**, each of the 13 root server names is actually backed by many servers distributed worldwide.
+
+As of **January 2026**, the global root server system consists of **1,959 physical instances**, operated by 12 organizations.  
+
+
+---
+
+## Summary
+
+| Concept | Count | Meaning |
+|--------|-------|---------|
+| **Named root servers** | **13** | Logical DNS entries (A–M) in the root zone |
+| **Physical root server instances** | **~1,959** | Real servers distributed globally using anycast |
+
+
 
 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 
