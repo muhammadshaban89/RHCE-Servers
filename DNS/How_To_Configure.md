@@ -161,17 +161,32 @@ Example content:
 ```dns
 $TTL 86400
 @   IN  SOA ns1.example.local. admin.example.local. (
-        2026012301 ; Serial (YYYYMMDDnn)
-        3600       ; Refresh
-        900        ; Retry
-        604800     ; Expire
-        86400 )    ; Minimum
+        2026012302 ; Serial
+        3600
+        900
+        604800
+        86400 )
 
     IN  NS  ns1.example.local.
+    IN  NS  ns2.example.local.
 
+; --- A Records ---
 ns1 IN  A   192.168.1.10
-www IN  A   192.168.1.20
-db  IN  A   192.168.1.30
+ns2 IN  A   192.168.1.11
+mail IN A   192.168.1.50
+www  IN A   192.168.1.20
+
+; --- MX Records ---
+@    IN  MX 10 mail.example.local.
+
+; --- SPF ---
+@    IN  TXT "v=spf1 a mx ip4:192.168.1.50 -all"
+
+; --- DKIM (example placeholder) ---
+default._domainkey IN TXT "v=DKIM1; k=rsa; p=YOUR_PUBLIC_KEY_HERE"
+
+; --- DMARC ---
+_dmarc IN TXT "v=DMARC1; p=none; rua=mailto:admin@example.local"
 ```
 
 Notes:
