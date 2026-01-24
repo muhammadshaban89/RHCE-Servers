@@ -29,7 +29,62 @@ How DNS works
 - The entire process querying the various servers takes a fraction of a second and is usually imperceptible to the user.
 DNS servers answer questions from both inside and outside their own domains. When a server receives a request from outside the domain for information about a name or address inside the domain, it provides the authoritative answer.
 When a server gets a request from within its domain for a name or address outside that domain, it forwards the request to another server, usually one managed by its ISP
-  
+
+
+DNS Resolution Flow (Visual Diagram)
+------------------------------------
+
+                ┌──────────────────────────┐
+                │      User's Device       │
+                │  (Browser / Application) │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │   Local DNS Resolver     │
+                │ (Usually ISP or OS stub) │
+                └─────────────┬────────────┘
+                              │
+                Does it have the answer?
+                     │ Yes          │ No
+                     ▼              ▼
+             Return cached IP   Continue lookup
+                                   │
+                                   ▼
+                ┌──────────────────────────┐
+                │     Root DNS Servers     │
+                │          (.)             │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │   TLD DNS Servers        │
+                │ (.com, .net, .org, etc.) │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │ Authoritative DNS Server │
+                │ (Holds A, AAAA, CNAME…)  │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │     Final DNS Answer     │
+                │   (e.g., A = 93.184.216.34) │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │  Local Resolver Caches   │
+                │      the response        │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                ┌──────────────────────────┐
+                │   User's Device Gets IP  │
+                │ Browser connects to site │
+                └──────────────────────────┘
 
 ---
 
