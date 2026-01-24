@@ -233,6 +233,7 @@ Explanation:
 - The zone name `1.168.192.in-addr.arpa` corresponds to `192.168.1.x`.
 - The `10` label corresponds to `192.168.1.10`, etc.
 - PTR records map IPs back to hostnames.
+- 
 
 ---
 
