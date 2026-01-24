@@ -24,7 +24,7 @@ I’ll assume:
 ```bash
 sudo dnf install -y bind bind-utils
 ```
-
+- BIND (Berkeley Internet Name Domain) is the most widely used DNS server software.
 - **`bind`**: The DNS server (`named`).
 - **`bind-utils`**: Tools like `dig`, `nslookup`, `host` for testing.
 
