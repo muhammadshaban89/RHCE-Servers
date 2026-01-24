@@ -93,27 +93,27 @@ What Are DNS Records?
 - DNS records are entries inside a DNS zone file that map human‑readable domain names (like ) to technical information such as IP addresses, mail servers, or service endpoints.
 - They act like a directory that helps browsers, email servers, and applications know where to go and how to connect.
 
-##  **1. A Record (Address Record)**
+###  **1. A Record (Address Record)**
 - Maps a domain name to an **IPv4 address**.
 - Example: `example.com → 93.184.216.34`
 - Used by browsers to reach a server.
 
 ---
 
-##  **2. AAAA Record (IPv6 Address Record)**
+###  **2. AAAA Record (IPv6 Address Record)**
 - Same purpose as an A record but for **IPv6 addresses**.
 - Example: `example.com → 2606:2800:220:1:248:1893:25c8:1946`
 
 ---
 
-##  **3. CNAME Record (Canonical Name Record)**
+###  **3. CNAME Record (Canonical Name Record)**
 - Points one domain to another domain (not to an IP).
 - Useful for aliases.
 - Example: `www.example.com → example.com`
 
 ---
 
-##  **4. MX Record (Mail Exchange Record)**
+###  **4. MX Record (Mail Exchange Record)**
 - Specifies mail servers responsible for receiving email for a domain.
 - Includes **priority** values. MX priority values are integers (0, 1, 5, 10, 20, 30, …).
   
@@ -124,7 +124,7 @@ What Are DNS Records?
 
 ---
 
-## **5. TXT Record (Text Record)**
+### **5. TXT Record (Text Record)**
 - Stores arbitrary text.
 - Common uses:
   - SPF (email sender validation)
@@ -133,13 +133,13 @@ What Are DNS Records?
 
 ---
 
-##  **6. NS Record (Name Server Record)**
+###  **6. NS Record (Name Server Record)**
 - Defines which name servers are authoritative for a domain.
 - Example: `ns1.example.com`, `ns2.example.com`
 
 ---
 
-##  **7. SOA Record (Start of Authority)**
+###  **7. SOA Record (Start of Authority)**
 - Contains administrative information about the zone:
   - Primary name server
   - Contact email
@@ -149,14 +149,14 @@ What Are DNS Records?
 
 ---
 
-##  **8. PTR Record (Pointer Record)**
+###  **8. PTR Record (Pointer Record)**
 - Used for **reverse DNS lookup**.
 - Maps an IP address back to a domain name.
 - Example: `93.184.216.34 → example.com`
 
 ---
 
-##  **9. SRV Record (Service Record)**
+###  **9. SRV Record (Service Record)**
 - Specifies the location of specific services.
 - Format includes:
   - Priority
@@ -167,37 +167,37 @@ What Are DNS Records?
 
 ---
 
-## **10. SPF Record (Sender Policy Framework)**
+### **10. SPF Record (Sender Policy Framework)**
 - Technically stored as a TXT record.
 - Defines which mail servers are allowed to send email for the domain.
 
 ---
 
-## **11. CAA Record (Certification Authority Authorization)**
+### **11. CAA Record (Certification Authority Authorization)**
 - Controls which Certificate Authorities can issue SSL certificates for the domain.
 - Helps prevent unauthorized certificate issuance.
 
 ---
 
-##  **12. NAPTR Record (Naming Authority Pointer)**
+###  **12. NAPTR Record (Naming Authority Pointer)**
 - Used for advanced service discovery.
 - Common in VoIP (SIP) and ENUM systems.
 
 ---
 
-##  **13. AFSDB Record**
+###  **13. AFSDB Record**
 - Used for AFS (Andrew File System) and OSF DCE.
 - Rarely used today.
 
 ---
 
-##  **14. HINFO Record (Host Information)**
+###  **14. HINFO Record (Host Information)**
 - Provides CPU and OS details.
 - Mostly deprecated for security reasons.
 
 ---
 
-##  **15. RP Record (Responsible Person)**
+###  **15. RP Record (Responsible Person)**
 - Lists the email of the person responsible for the domain.
 
 ---
