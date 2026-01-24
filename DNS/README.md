@@ -89,11 +89,9 @@ DNS Resolution Flow (Visual Diagram)
 ---
 
 What Are DNS Records?
----------
+--------------------
 - DNS records are entries inside a DNS zone file that map human‑readable domain names (like ) to technical information such as IP addresses, mail servers, or service endpoints.
 - They act like a directory that helps browsers, email servers, and applications know where to go and how to connect.
-
-  #  DNS Record Types and What They Do
 
 ##  **1. A Record (Address Record)**
 - Maps a domain name to an **IPv4 address**.
@@ -200,7 +198,8 @@ What Are DNS Records?
 
 ---
 
-## Types of DNS servers
+Types of DNS servers
+-----------------------
 
 ### 1. Recursive resolver
 
