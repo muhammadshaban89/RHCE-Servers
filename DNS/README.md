@@ -9,6 +9,28 @@ Key ideas:
 - **Distributed:** No single central server; many DNS servers cooperate globally.
 - **Caching:** Results are cached to speed up lookups and reduce traffic.
 
+How DNS works
+--------------
+
+* DNS servers convert URLs and domain names into IP addresses that computers can understand and use.
+*  They translate what a user types into a browser into something the machine can use to find a webpage.
+*   This process of translation and lookup is called DNS resolution.
+  
+**The basic process of a DNS resolution follows these steps:**
+
+- 1.	The user enters a web address or domain name into a browser.
+-	2.	The browser sends a message, called a recursive DNS query, to the network to find out which IP or network address the domain corresponds to.
+- 3.	The query goes to a recursive DNS server, which is also called a recursive resolver, and is usually managed by the internet service provider (ISP). If the recursive resolver has the address, it will return the address to the user, and the webpage will load.
+- 4.	If the recursive DNS server does not have an answer, it will query a series of other servers in the following order: DNS root name servers, top-level domain (TLD) name servers and authoritative name servers.
+- 5.	The three server types work together and continue redirecting until they retrieve a DNS record that contains the queried IP address. It sends this information to the recursive DNS server, and the webpage the user is looking for loads. DNS root name servers and TLD servers primarily redirect queries and rarely provide the resolution themselves.
+- 6.	The recursive server stores, or caches, the A record for the domain name, which contains the IP address. The next time it receives a request for that domain name, it can respond directly to the user instead of querying other servers.
+- 7.	If the query reaches the authoritative server and it cannot find the information, it returns an error message.
+
+- The entire process querying the various servers takes a fraction of a second and is usually imperceptible to the user.
+DNS servers answer questions from both inside and outside their own domains. When a server receives a request from outside the domain for information about a name or address inside the domain, it provides the authoritative answer.
+When a server gets a request from within its domain for a name or address outside that domain, it forwards the request to another server, usually one managed by its ISP
+  
+
 ---
 
 ## Types of DNS servers
