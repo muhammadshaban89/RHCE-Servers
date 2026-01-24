@@ -135,6 +135,8 @@ Key points:
 - **`allow-query`**: Restrict who can query your server (here: localhost + your subnet).
 - **`recursion yes;`**: Allows your server to act as a caching resolver for clients.
 - **Zones:** We added `example.local` and `1.168.192.in-addr.arpa`.
+- **arpa** = “Address and Routing Parameter Area”
+(an old ARPANET infrastructure domain still used for technical DNS functions)
 
 ---
 
