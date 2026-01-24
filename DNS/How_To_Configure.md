@@ -167,8 +167,8 @@ $TTL 86400
         604800
         86400 )
 
-    IN  NS  ns1.example.local.
-    IN  NS  ns2.example.local.
+@   IN  NS  ns1.example.local.
+@   IN  NS  ns2.example.local.
 
 ; --- A Records ---
 ns1 IN  A   192.168.1.10
@@ -176,30 +176,14 @@ ns2 IN  A   192.168.1.11
 mail IN A   192.168.1.50
 www  IN A   192.168.1.20
 
-; -----------------------------
-;   PTR Records (Reverse DNS)
-; -----------------------------
-150      IN  PTR   ns1.example.local.
-11      IN  PTR   ns2.example.local.
-20      IN  PTR   www.example.local.
-50      IN  PTR   mail.example.local.
-
 ; --- MX Records ---
 @    IN  MX 10 mail.example.local.
-
-; --- SPF ---
-@    IN  TXT "v=spf1 a mx ip4:192.168.1.50 -all"
-
-; --- DKIM (example placeholder) ---
-default._domainkey IN TXT "v=DKIM1; k=rsa; p=YOUR_PUBLIC_KEY_HERE"
-
-; --- DMARC ---
-_dmarc IN TXT "v=DMARC1; p=none; rua=mailto:admin@example.local"
 ```
 
 Notes:
 
 - **SOA line:** `ns1.example.local.` is the primary NS; `admin.example.local.` is the email (replace `@` with `.`).
+- in a DNS zone file `@` is simply a shortcut that means: “This zone’s domain name.”
 - **Serial:** Use a date‑based serial like `YYYYMMDDnn` and increment when you change the zone.
 - **NS record:** Declares `ns1.example.local` as the authoritative name server.
 - **A records:** Map hostnames to IPs.
@@ -235,7 +219,7 @@ $TTL 86400
         604800     ; Expire
         86400 )    ; Minimum
 
-    IN  NS  ns1.example.local.
+@    IN  NS  ns1.example.local.
 
 10  IN  PTR ns1.example.local.
 20  IN  PTR www.example.local.
