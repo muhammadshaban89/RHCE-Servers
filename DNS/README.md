@@ -115,7 +115,11 @@ What Are DNS Records?
 
 ##  **4. MX Record (Mail Exchange Record)**
 - Specifies mail servers responsible for receiving email for a domain.
-- Includes **priority** values.
+- Includes **priority** values. MX priority values are integers (0, 1, 5, 10, 20, 30, …).
+  
+  - Lower number = higher priority
+  - Higher number = backup server
+
 - Example: `10 mail1.example.com`
 
 ---
