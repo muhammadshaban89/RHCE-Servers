@@ -216,18 +216,18 @@ Example content:
 
 ```dns
 $TTL 86400
-@   IN  SOA ns1.example.local. admin.example.local. (
+@   IN  SOA mydnserver.example.local. admin.example.local. (
         2026012301 ; Serial
         3600       ; Refresh
         900        ; Retry
         604800     ; Expire
         86400 )    ; Minimum
 
-@    IN  NS  ns1.example.local.
+@    IN  NS  mydnsserver.example.local.
 
-10  IN  PTR ns1.example.local.
-20  IN  PTR www.example.local.
-30  IN  PTR db.example.local.
+100  IN  PTR mydnsserver.example.local.
+110  IN  PTR mail.example.local.
+120  IN  PTR mail2.example.local.
 ```
 
 Explanation:
