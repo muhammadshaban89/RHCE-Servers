@@ -161,24 +161,27 @@ Example content:
 
 ```dns
 $TTL 86400
-@   IN  SOA ns1.example.local. admin.example.local. (
-        2026012302 ; Serial
-        3600
-        900
-        604800
-        86400 )
+@   IN  SOA mydnserver.example.local. admin.example.local. (
+        2026012301 ; Serial
+        3600       ; Refresh
+        900        ; Retry
+        604800     ; Expire
+        86400 )    ; Minimum
 
-@   IN  NS  ns1.example.local.
-@   IN  NS  ns2.example.local.
+@    IN  NS  mydnsserver.example.local.
 
 ; --- A Records ---
-ns1 IN  A   192.168.1.10
-ns2 IN  A   192.168.1.11
-mail IN A   192.168.1.50
-www  IN A   192.168.1.20
+mydnsserver     IN  A    172.16.0.100
+mail            IN  A    172.16.0.110
+mail2           IN  A    172.16.0.120
 
 ; --- MX Records ---
 @    IN  MX 10 mail.example.local.
+@    IN  MX 20 mail2.example.local.
+
+; CNAME Record
+
+ftp   IN   CNAME   mydnsserver.example.local.
 ```
 
 Notes:
