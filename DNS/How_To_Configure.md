@@ -5,8 +5,7 @@ On RHEL 9, the standard DNS server is **BIND** (named). Red Hat’s documentatio
 - **Caching DNS server** for a local network.
 - **Authoritative DNS server** for one or more zones.
 - **Secondary server** for redundancy.  
-
-We’ll walk through a **simple authoritative + caching** setup for a private zone (e.g., `example.local`) on RHEL 9, with both forward and reverse lookup.
+Lets walk  through a **simple authoritative + caching** setup for a private zone (e.g., `example.local`) on RHEL 9, with both forward and reverse lookup.
 
 ---
 
@@ -233,9 +232,21 @@ Explanation:
 - The zone name `1.168.192.in-addr.arpa` corresponds to `192.168.1.x`.
 - The `10` label corresponds to `192.168.1.10`, etc.
 - PTR records map IPs back to hostnames.
-- 
+  
 
 ---
+
+###  SOA Record Parameters Explained
+
+| **Field**       | **Value**     | **Purpose** |
+|-----------------|---------------|-------------|
+| `$TTL`          | `86400`       | Default Time-To-Live for all records in the zone (in seconds). Here, 86400 seconds = 1 day. |
+| `Serial`        | `2026012301`  | Version number of the zone file. Used by secondary DNS servers to detect updates. Format often follows `YYYYMMDDnn`. |
+| `Refresh`       | `3600`        | Time (in seconds) a secondary server waits before checking for updates from the primary. Here, 1 hour. |
+| `Retry`         | `900`         | Time to wait before retrying a failed zone transfer. Here, 15 minutes. |
+| `Expire`        | `604800`      | Time after which a secondary server stops serving the zone if it can't reach the primary. Here, 7 days. |
+| `Minimum`       | `86400`       | Legacy field: originally used as the default TTL for negative responses (e.g., NXDOMAIN). Still relevant for caching behavior. |
+
 
 ## Check permissions and SELinux context
 
