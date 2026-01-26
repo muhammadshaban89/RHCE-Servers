@@ -1,6 +1,32 @@
  **Caching‑only DNS** :
  ------------------------
 - no zones, only forwards + caches
+  
+**Caching DNS = Recursive Resolver:**
+
+This server:
+
+• 	Speeds up DNS for all clients
+
+• 	Caches answers for internal + external domains
+
+• 	Reduces load on your master/slave
+
+• 	Reduces internet DNS traffic
+
+• 	Provides fast responses after first lookup
+
+• 	Protects clients if upstream DNS is slow
+
+It is the DNS server your clients actually use.
+
+✔ It handles:
+
+• 	Internal queries (by forwarding to master/slave)
+
+• 	External queries (by recursion or forwarding to public DNS)
+
+• 	Cache hits (instant answers)
 
 ⭐ Key Points: Caching‑Only DNS Server:
 --------------------
