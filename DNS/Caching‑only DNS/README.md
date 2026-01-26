@@ -7,22 +7,27 @@
 🔹 1. No authoritative zones
 -----
 • 	It does not host any zone files.
+
 • 	It only performs recursion and caching.
 
 🔹 2. Speeds up DNS resolution
 ---
 • 	First query → forwarded upstream
+
 • 	Subsequent queries → served instantly from cache
+
 • 	Reduces latency across the entire network.
 
 🔹 3. Reduces load on authoritative DNS
 ---
 • 	Authoritative server answers fewer queries.
+
 • 	Caching DNS absorbs repetitive traffic.
 
 🔹 4. Reduces external DNS traffic
 ----
 • 	Only the first lookup goes to the internet.
+
 • 	Saves bandwidth and improves reliability.
 
 🔹 5. Provides resilience during outages-
@@ -32,6 +37,7 @@
 🔹 6. Improves security
 -----
 • 	Internal clients don’t query public DNS directly.
+
 • 	Central point for DNS logging, filtering, and monitoring.
 
 
