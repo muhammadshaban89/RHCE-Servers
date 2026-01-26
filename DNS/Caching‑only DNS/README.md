@@ -2,7 +2,8 @@
  ------------------------
 - no zones, only forwards + caches
 
-  ⭐ Key Points: Caching‑Only DNS Server:
+⭐ Key Points: Caching‑Only DNS Server:
+--------------------
   
 🔹 1. No authoritative zones
 -----
