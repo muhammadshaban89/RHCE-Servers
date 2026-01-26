@@ -2,23 +2,35 @@
  ------------------------
 - no zones, only forwards + caches
 
-  ⭐ Key Points: Caching‑Only DNS Server
+  ⭐ Key Points: Caching‑Only DNS Server:
+  
 🔹 1. No authoritative zones
+-----
 • 	It does not host any zone files.
 • 	It only performs recursion and caching.
+
 🔹 2. Speeds up DNS resolution
+---
 • 	First query → forwarded upstream
 • 	Subsequent queries → served instantly from cache
 • 	Reduces latency across the entire network.
+
 🔹 3. Reduces load on authoritative DNS
+---
 • 	Authoritative server answers fewer queries.
 • 	Caching DNS absorbs repetitive traffic.
+
 🔹 4. Reduces external DNS traffic
+----
 • 	Only the first lookup goes to the internet.
 • 	Saves bandwidth and improves reliability.
-🔹 5. Provides resilience during outages
+
+🔹 5. Provides resilience during outages-
+-----
 • 	Cached entries continue working even if upstream DNS is slow or unreachable.
+
 🔹 6. Improves security
+-----
 • 	Internal clients don’t query public DNS directly.
 • 	Central point for DNS logging, filtering, and monitoring.
 
@@ -278,4 +290,5 @@ Your caching‑only DNS will now:
 - Cache everything for fast responses
 - Never act as an authoritative server
 
-
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
+👉Youtube Channel: http://www.youtube.com/@engrm.shaban5099
