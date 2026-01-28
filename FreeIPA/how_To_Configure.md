@@ -136,6 +136,21 @@ ipa user-mod user1 --password
 https://myipa.server.local
 ```
 
+- **If you want to access from windows:**
+  
+  *  Open PowerShell as Administrator.
+  *	 Run:
+  ```powershell
+	notepad C:\Windows\System32\drivers\etc\hosts
+   ```
+  * save file and run:
+
+	```powershell
+		ipconfig /flushdns
+ 	```
+This forces Windows to reload the hosts file.
+  
+
 Important Note
 --------------
 
