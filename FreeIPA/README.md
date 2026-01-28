@@ -76,7 +76,7 @@ FreeIPA is essentially **“Active Directory for Linux environments.”**
 
 ---
 
-# 🧠 Should You Use FreeIPA Today?  
+#  Should You Use FreeIPA Today?  
 If you manage **Linux servers**, especially in a mixed or enterprise environment, FreeIPA is one of the best modern solutions for:
 
 - Centralized authentication  
