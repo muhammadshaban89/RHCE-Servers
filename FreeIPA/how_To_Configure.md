@@ -6,7 +6,7 @@ Step By Step Guide To Configure FreeIPA on Linux.
 	hostnamectl set-hostname myipa.server.local
 	exec bash
   
-# 2:make entry in /etc/hosts for name resolution: `vi /etc/hosts`
+# 2: Make entry in /etc/hosts for name resolution: `vi /etc/hosts`
 	
 	192.168.100.30 myipa.server.local
   
@@ -17,7 +17,7 @@ Step By Step Guide To Configure FreeIPA on Linux.
 	timedatectl set-timezone Asia/Karachi
   ```
   
-# 4:check selinux status and set to permissive  :
+# 4: check selinux status and set to permissive  :
 
 	sestatus 
 	setenforce 0
