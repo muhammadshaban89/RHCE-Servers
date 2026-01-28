@@ -236,7 +236,7 @@ timedatectl set-timezone Asia/Karachi
 
 * after completion you can use
 ```
-su - username ||to verify user loging
+su - username 
 ```
 
 - OR
