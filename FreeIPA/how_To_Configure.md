@@ -110,7 +110,7 @@ ipactl status
   
 - To restart any single service
   ```
-  pactl restart "service name"
+  ipactl restart "service name"
   ```
 **10: Set Default Shell for All Users:**
 
