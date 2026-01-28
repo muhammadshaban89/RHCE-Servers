@@ -224,4 +224,21 @@ FreeIPA automatically configures:
 
 ---
 
+**One‑Command Full FreeIPA + DNS Installation**
 
+```
+ipa-server-install \
+    --unattended \
+    --hostname=ipa.example.local \
+    --domain=example.local \
+    --realm=EXAMPLE.LOCAL \
+    --ds-password='DirectoryManagerPass' \
+    --admin-password='AdminPass' \
+    --mkhomedir \
+    --setup-dns \
+    --forwarder=1.1.1.1 \
+    --forwarder=8.8.8.8 \
+    --no-dnssec-validation \
+    --auto-reverse
+
+```
