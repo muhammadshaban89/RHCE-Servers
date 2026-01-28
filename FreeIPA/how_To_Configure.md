@@ -136,7 +136,7 @@ ipa user-mod user1 --password
 https://myipa.server.local
 ```
 
-- **If you want to access from windows:**
+- **If you want to access from windows, edit host file as FreeIPA must resolve its own hostname and all IPA-related records correctly**
   
   *  Open PowerShell as Administrator.
   *	 Run:
