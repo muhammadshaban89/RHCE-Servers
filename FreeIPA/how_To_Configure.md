@@ -25,7 +25,7 @@ Step By Step Guide To Configure FreeIPA on Linux.
 - OR  permanantly set it permissive:
   
 ```
-  sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/conf
+  sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
 ```
 **5: Install packages :**
 
