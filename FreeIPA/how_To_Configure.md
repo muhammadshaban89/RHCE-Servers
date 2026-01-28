@@ -142,10 +142,10 @@ Important Note
 * To allow ssh integration:
   
 - You can configure `SSHD` to fetch users `SSH public key` from the `LDAP` directory by uncommenting these lines in `/etc/ssh/sshd_config`:
-
-`AuthorizedKeysCommand /usr/bin/sss_ssh_authorizedkeys`
-`AuthorizedKeysCommandUser nobody`
-
+```
+AuthorizedKeysCommand /usr/bin/sss_ssh_authorizedkeys
+AuthorizedKeysCommandUser nobody
+```
 Then restart `sshd.service.`
 
 - You can add your `ssh` key to your `FreeIPA` user account through the web interface or use the `-sshpubkey='ssh-rsa AAAA...'` argument to the ipa `user-mod` or `ipa user-create` commands.
