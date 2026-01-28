@@ -4,14 +4,14 @@
 
 ---
 
-#  **1. Hostname**
+**1. Hostname**
 Installer asks:
 
 ```
 Enter the fully qualified domain name of the server:
 ```
 
-### ✔ What it needs  
+✔ What it needs  
 A **FQDN** that resolves to your server.
 
 Example:
@@ -19,21 +19,21 @@ Example:
 ipa.example.local
 ```
 
-### ✔ Requirements  
+✔ Requirements  
 - Must be resolvable (via /etc/hosts or DNS)  
 - Must not be a short name  
 - Must not be an IP  
 
 ---
 
-#  **2. Domain Name**
+**2. Domain Name**
 Installer asks:
 
 ```
 Enter the domain name:
 ```
 
-### ✔ What it needs  
+✔ What it needs  
 Your DNS domain.
 
 Example:
@@ -43,14 +43,14 @@ example.local
 
 ---
 
-#  **3. IPA Realm Name (Kerberos Realm)**
+**3. IPA Realm Name (Kerberos Realm)**
 Installer asks:
 
 ```
 Enter the Kerberos realm:
 ```
 
-### ✔ What it needs  
+✔ What it needs  
 Realm is always **UPPERCASE** version of your domain.
 
 Example:
@@ -60,14 +60,14 @@ EXAMPLE.LOCAL
 
 ---
 
-#  **4. Directory Manager (DM) Password**
+**4. Directory Manager (DM) Password**
 Installer asks:
 
 ```
 Directory Manager password:
 ```
 
-### ✔ What it is  
+✔ What it is  
 - Superuser for LDAP  
 - Equivalent to “root” for the directory  
 - Used rarely (schema changes, recovery)
@@ -76,14 +76,14 @@ Choose a strong password.
 
 ---
 
-#  **5. IPA Admin Password**
+**5. IPA Admin Password**
 Installer asks:
 
 ```
 IPA admin password:
 ```
 
-### ✔ What it is  
+✔ What it is  
 Password for the **admin** Kerberos principal.
 
 Used for:
@@ -93,14 +93,14 @@ Used for:
 
 ---
 
-#  **6. DNS Forwarders**
+**6. DNS Forwarders**
 Installer asks:
 
 ```
 Do you want to configure DNS forwarders? [yes/no]:
 ```
 
-### ✔ Choose **yes**  
+✔ Choose **yes**  
 Then enter:
 
 ```
@@ -110,31 +110,31 @@ Then enter:
 
 Or your internal DNS.
 
-### ✔ Why  
+✔ Why  
 Forwarders allow FreeIPA DNS to resolve external domains.
 
 ---
 
-#  **7. Allow DNS Forwarding?**
+**7. Allow DNS Forwarding?**
 Installer asks:
 
 ```
 Do you want to allow DNS forwarding? [yes/no]:
 ```
 
-### ✔ Choose **yes**  
+✔ Choose **yes**  
 Unless you want a fully isolated DNS.
 
 ---
 
-# **8. Reverse Zone Creation**
+**8. Reverse Zone Creation**
 Installer asks:
 
 ```
 Do you want to create reverse zone? [yes/no]:
 ```
 
-### ✔ Choose **yes**  
+✔ Choose **yes**  
 Then enter:
 
 ```
@@ -149,31 +149,31 @@ Installer will create:
 
 ---
 
-#  **9. DNSSEC (Optional)**
+**9. DNSSEC (Optional)**
 Installer may ask:
 
 ```
 Do you want to configure DNSSEC? [yes/no]:
 ```
 
-### ✔ Choose **no** for labs  
+✔ Choose **no** for labs  
 DNSSEC complicates things and is not needed in test environments.
 
 ---
 
-# 🕒 **10. NTP Configuration**
+**10. NTP Configuration**
 Installer asks:
 
 ```
 Configure NTP? [yes/no]:
 ```
 
-### ✔ Choose **yes**  
+✔ Choose **yes**  
 Kerberos requires accurate time.
 
 ---
 
-#  **11. Final Confirmation**
+**11. Final Confirmation**
 Installer shows a summary:
 
 - Hostname  
@@ -188,11 +188,11 @@ Then asks:
 Continue to configure the system with these values? [no]: yes
 ```
 
-### ✔ Choose **yes**
+✔ Choose **yes**
 
 ---
 
-# 🎉 **What Happens After Installation**
+**What Happens After Installation**
 FreeIPA automatically configures:
 
 - LDAP (389 Directory Server)  
@@ -242,3 +242,7 @@ ipa-server-install \
     --auto-reverse
 
 ```
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
+
+👉Youtube Channel: http://www.youtube.com/@engrm.shaban5099
