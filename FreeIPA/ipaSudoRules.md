@@ -168,6 +168,7 @@ When you create a sudo rule in FreeIPA, it **does not automatically apply to exi
 ---
 
 **How to Apply a Sudo Rule to an Existing IPA User**
+------------------------------------------------------
 
 Assume:
 
@@ -286,8 +287,7 @@ You modify a rule by changing its components:
 Below are the most common modifications.
 
 ---
-
-## 🔹 **Add a user to an existing rule**
+**Add a user to an existing rule**
 ```
 ipa sudorule-add-user --users=ipauser sudorule1
 ```
