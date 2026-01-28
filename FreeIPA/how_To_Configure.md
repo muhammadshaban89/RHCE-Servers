@@ -57,7 +57,7 @@ Step By Step Guide To Configure FreeIPA on Linux.
    ```
  * If you want FreeIPA to manage DNS zones (recommended for labs).
 
-# ✔ What happens during installation:
+**✔ What happens during installation:**
 
 - Configures **LDAP (389 DS)**
 - Configures **Kerberos KDC**
