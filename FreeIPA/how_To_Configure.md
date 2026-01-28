@@ -193,7 +193,7 @@ vi /etc/hosts
   
 - or permanantly set it permissive:
 ```
-  sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/conf
+  sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/config
 ```
 
 **4:set time and date** 
