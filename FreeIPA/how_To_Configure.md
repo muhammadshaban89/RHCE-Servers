@@ -5,18 +5,21 @@ Step By Step Guide To Configure FreeIPA on Linux.
 	hostnamectl set-hostname myipa.server.local
 	exec bash
   
-# 2:make entry in /etc/hosts for name resolution
-	vi /etc/hosts
+# 2:make entry in /etc/hosts for name resolution: `vi /etc/hosts`
+	
 	192.168.100.30 myipa.server.local
   
-# 3: Set Time and Date 
+# 3: Set Time and Date : 
+- Set Time Zone as per your TimeZone:
+  ```
 	timedatectl set-timezone Asia/Karachi
-
+  ```
+  
 # 4:check selinux status and set to permissive  :
 	sestatus 
 	setenforce 0
   
-- or permanantly set it permissive:
+- OR  permanantly set it permissive:
 ```
   sed -i 's/^SELINUX=.*/SELINUX=permissive/g' /etc/selinux/conf
 ```
