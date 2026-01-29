@@ -1,6 +1,6 @@
 
 
-#  What FreeIPA Is  
+#  What FreeIPA is?
 FreeIPA is an **open‑source Identity Management (IdM) system** that combines several core technologies into one integrated platform:
 
 - **LDAP directory (389 Directory Server)**  
