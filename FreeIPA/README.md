@@ -10,6 +10,17 @@ FreeIPA is an **open‑source Identity Management (IdM) system** that combines s
 - **NTP, SSSD, Web UI, CLI tools**  
 
 It is the upstream project for **Red Hat Identity Management (IdM)**. 
+----
+
+Identity Management is the system and processes used to manage:
+- Who a user is
+- What they are allowed to access
+- How they authenticate
+- **How their identity is tracked across systems.
+
+**In short:**
+
+identity Management ensures the right people get the right access to the right resources at the right time securely and consistently.
 
 ---
 
