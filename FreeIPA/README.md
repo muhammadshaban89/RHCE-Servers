@@ -13,10 +13,10 @@ It is the upstream project for **Red Hat Identity Management (IdM)**.
 ----
 
 Identity Management is the system and processes used to manage:
-- Who a user is
-- What they are allowed to access
-- How they authenticate
-- **How their identity is tracked across systems.
+- Who a user is?
+- What they are allowed to access?
+- How they authenticate?
+- How their identity is tracked across systems.
 
 **In short:**
 
