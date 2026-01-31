@@ -1,5 +1,6 @@
 
-Setting the **FQDN (Fully Qualified Domain Name)** in Windows is straightforward once you know where Windows stores the hostname and domain information. 
+Setting the **FQDN (Fully Qualified Domain Name)**
+---------------------
 
 The FQDN is simply:
 
@@ -75,7 +76,7 @@ server01.example.local
 
 ---
 
-# 🟫 4. Optional: Join a Domain (Automatically sets FQDN)
+#  4. Optional: Join a Domain (Automatically sets FQDN)
 
 If you join a Windows domain:
 
