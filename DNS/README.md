@@ -244,6 +244,7 @@ Types of DNS servers
 1. Recursive Query (Recursion ON)
 
 The DNS server does all the work:
+
 • 	Checks its cache
 
 • 	If not found → queries root servers
