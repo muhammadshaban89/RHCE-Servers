@@ -243,7 +243,7 @@ Explanation:
 
 | **Field**       | **Value**     | **Purpose** |
 |-----------------|---------------|-------------|
-| `$TTL`          | `86400`       | Default Time-To-Live for all records in the zone (in seconds). Here, 86400 seconds = 1 day. |
+| `$TTL`          | `86400`       | Default Time-To-Live for all records in the zone (in seconds). Here, 86400 seconds = 1 day.TTL controls how long a DNS record stays in a resolver’s cache.|
 | `Serial`        | `2026012301`  | Version number of the zone file. Used by secondary DNS servers to detect updates. Format often follows `YYYYMMDDnn`. |
 | `Refresh`       | `3600`        | Time (in seconds) a secondary server waits before checking for updates from the primary. Here, 1 hour. |
 | `Retry`         | `900`         | Time to wait before retrying a failed zone transfer. Here, 15 minutes. |
