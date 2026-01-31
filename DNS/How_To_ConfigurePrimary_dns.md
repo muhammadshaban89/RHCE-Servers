@@ -187,7 +187,7 @@ ftp   IN   CNAME   mydnsserver.example.local.
 Notes:
 
 - **SOA line:** `ns1.example.local.` is the primary NS; `admin.example.local.` is the email (replace `@` with `.`).
-- in a DNS zone file `@` is simply a shortcut that means: “This zone’s domain name.”
+- 1n a DNS zone file `@` is simply a shortcut that means: “This zone’s domain name.”
 - **Serial:** Use a date‑based serial like `YYYYMMDDnn` and increment when you change the zone.
 - **NS record:** Declares `ns1.example.local` as the authoritative name server.
 - **A records:** Map hostnames to IPs.
