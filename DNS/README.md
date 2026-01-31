@@ -239,7 +239,8 @@ Types of DNS servers
 
 - **Definition:** The client asks the DNS server to return either a final answer or an error—no referrals.
 - **Typical use:** Your PC to your local DNS resolver. The resolver then does all the work (root → TLD → authoritative) if needed.
--  When a client asks a DNS server a question (example: What is the IP of google.com?), the server can behave in two ways:
+
+  -  When a client asks a DNS server a question (example: What is the IP of google.com?), the server can behave in two ways:
     
 1. Recursive Query (Recursion ON)
 
