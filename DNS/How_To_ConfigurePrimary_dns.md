@@ -239,7 +239,24 @@ Explanation:
 
 ---
 
-###  SOA Record Parameters Explained
+###  SOA Record Parameters Explained:
+
+* What is an SOA Record?
+  
+- The SOA record defines the authoritative information about a DNS zone.
+- It tells DNS resolvers:
+  
+• 	Which server is the primary DNS server
+
+• 	Who is responsible for the zone
+
+• 	How often secondary servers should refresh
+
+• 	How long cached data should live
+
+• 	When the zone expires
+
+- Every DNS zone must have exactly one SOA record.
 
 | **Field**       | **Value**     | **Purpose** |
 |-----------------|---------------|-------------|
