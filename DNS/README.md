@@ -260,6 +260,14 @@ The DNS server does all the work:
 
 Client does nothing except wait.
 
+This is how:
+
+• 	ISP DNS servers work
+
+• 	Home routers work
+
+• 	Public DNS (1.1.1.1, 8.8.8.8) works
+
 
 ### 2. Iterative query
 
