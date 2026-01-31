@@ -244,6 +244,7 @@ Explanation:
 * What is an SOA Record?
   
 - The SOA record defines the authoritative information about a DNS zone.
+  
 - It tells DNS resolvers:
   
 • 	Which server is the primary DNS server
