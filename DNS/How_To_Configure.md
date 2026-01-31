@@ -196,7 +196,7 @@ Notes:
 
 ## Create the reverse zone file
 
-### 6. Create `/var/named/1.168.192.in-addr.arpa.zone`
+## 6. Create `/var/named/1.168.192.in-addr.arpa.zone`
 
 Copy a template:
 
@@ -265,7 +265,7 @@ This resets SELinux contexts for zone files to what BIND expects.
 
 ## Validate configuration and zone files
 
-### 7. Check `named.conf` syntax
+## 7. Check `named.conf` syntax
 
 ```bash
 sudo named-checkconf /etc/named.conf
@@ -274,7 +274,7 @@ sudo named-checkconf /etc/named.conf
 - If there is no output, syntax is OK.
 - Fix any line/typo errors if reported.
 
-### 8. Check zone files
+## 8. Check zone files
 
 Forward zone:
 
@@ -301,7 +301,7 @@ If there are errors (e.g., missing `.` at the end of FQDNs), fix them and re‑r
 
 ## Restart BIND and configure firewall
 
-### 9. Restart `named`
+## 9. Restart `named`
 
 ```bash
 sudo systemctl restart named
@@ -310,7 +310,7 @@ sudo systemctl status named
 
 Ensure it’s running without errors.
 
-### 10. Open DNS service in firewalld
+## 10. Open DNS service in firewalld
 
 ```bash
 sudo firewall-cmd --permanent --add-service=dns
@@ -343,6 +343,17 @@ nmcli connection up "System eth0"
 
 Use `dig`:
 
+**What dig is?**
+- `dig` stands for `Domain Information Groper`.
+- It queries DNS servers and shows detailed DNS responses.
+
+It’s used for:
+- Checking DNS records
+- Testing DNS servers
+- Debugging FreeIPA DNS
+- Verifying forward and reverse zones
+- Inspecting TTL, authority, and recursion
+
 ```bash
 dig @127.0.0.1 ns1.example.local
 dig @127.0.0.1 www.example.local
@@ -354,7 +365,7 @@ You should see:
 - **ANSWER SECTION** with A records for forward lookups.
 - **PTR** record for reverse lookup.
 
-### 12. Test from a client machine
+## 12. Test from a client machine
 
 From another host using your DNS server:
 
