@@ -239,11 +239,44 @@ Types of DNS servers
 
 - **Definition:** The client asks the DNS server to return either a final answer or an error—no referrals.
 - **Typical use:** Your PC to your local DNS resolver. The resolver then does all the work (root → TLD → authoritative) if needed.
+-  When a client asks a DNS server a question (example: What is the IP of google.com?), the server can behave in two ways:
+    
+1. Recursive Query (Recursion ON)
+
+The DNS server does all the work:
+• 	Checks its cache
+
+• 	If not found → queries root servers
+
+• 	Then TLD servers
+
+• 	Then authoritative servers
+
+• 	Gets the final answer
+
+• 	Returns the final IP to the client
+
+Client does nothing except wait.
+
 
 ### 2. Iterative query
 
 - **Definition:** The server responds with the best information it has—either the answer or a referral to another DNS server closer to the answer.
 - **Typical use:** Between DNS servers (recursive resolver → root → TLD → authoritative).
+
+- The DNS server does NOT resolve the full answer.
+  
+It only replies with:
+
+• 	“I don’t know, but try this server…”
+
+The client must continue the lookup.
+
+This is how:
+
+• 	Authoritative DNS servers behave
+
+• 	FreeIPA/BIND authoritative zones behave
 
 ### 3. Inverse (reverse) query
 
