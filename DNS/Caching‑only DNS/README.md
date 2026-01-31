@@ -161,10 +161,25 @@ sudo firewall-cmd --reload
 ```bash
 dig @192.168.20.20 host1.lab.local
 ```
-
 Expected:
 - First query: forwarded to authoritative DNS
 - Second query: served from cache
+
+**What `dig` is**
+- it stands for Domain Information Groper.
+- It queries `DNS` servers and shows detailed `DNS` responses.
+- It’s used for:
+• 	Checking DNS records
+
+• 	Testing DNS servers
+
+• 	Debugging FreeIPA DNS
+
+• 	Verifying forward and reverse zones
+
+• 	Inspecting TTL, authority, and recursion
+
+
 
 Check cache speed:
 ```bash
