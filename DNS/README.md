@@ -265,6 +265,9 @@ Client does nothing except wait.
 - **Definition:** The server responds with the best information it has—either the answer or a referral to another DNS server closer to the answer.
 - **Typical use:** Between DNS servers (recursive resolver → root → TLD → authoritative).
 
+
+2. Iterative Query (Recursion OFF)
+
 - The DNS server does NOT resolve the full answer.
   
 It only replies with:
