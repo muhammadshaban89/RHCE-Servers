@@ -100,31 +100,46 @@ From ns2:
 dig @192.168.1.10 example.local AXFR
 ```
 
+`
+
 You should see the full zone output.  
 If not, check:
 
 - `allow-transfer` on primary  
 - SELinux contexts  
 - Firewalld  
-- Serial number increments  
+- Serial number increments
+
+
+**What dig is?**
+- `dig` stands for `Domain Information Groper`.
+- It queries DNS servers and shows detailed DNS responses.
+
+It’s used for:
+- Checking DNS records
+- Testing DNS servers
+- Debugging FreeIPA DNS
+- Verifying forward and reverse zones
+- Inspecting TTL, authority, and recursion
+
 
 ---
 
-# 🧪 Testing Redundancy
+#  Testing Redundancy
 
-### Test primary:
+## Test primary:
 
 ```bash
 dig @192.168.1.10 www.example.local
 ```
 
-### Test secondary:
+## Test secondary:
 
 ```bash
 dig @192.168.1.11 www.example.local
 ```
 
-### Simulate primary failure
+## Simulate primary failure
 
 Stop named on ns1:
 
