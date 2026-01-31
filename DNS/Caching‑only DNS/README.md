@@ -1,6 +1,7 @@
  **Caching‑only DNS** :
  ------------------------
-- no zones, only forwards + caches
+**no zones, only forwards + caches**
+
   
 **Caching DNS = Recursive Resolver:**
 
