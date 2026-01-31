@@ -211,6 +211,10 @@ Test Caching With `Flush`:
 
 BIND on RHEL 9 uses **rndc**.
 
+
+`rndc`is short for Remote Name Daemon Control.
+- It’s the command‑line tool used to control and manage the BIND (named) DNS server while it’s running
+
 ## Flush everything:
 ```bash
 sudo rndc flush
