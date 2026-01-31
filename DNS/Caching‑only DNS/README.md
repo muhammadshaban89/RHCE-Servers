@@ -214,11 +214,19 @@ BIND on RHEL 9 uses **rndc**.
 
 `rndc`is short for Remote Name Daemon Control.
 - It’s the command‑line tool used to control and manage the BIND (named) DNS server while it’s running
+- You can use following commands:
+```
+rndc reload
+rndc flush
+rndc status
+rndc querylog on
+```
 
 ## Flush everything:
 ```bash
 sudo rndc flush
 ```
+
 
 ## Flush only one domain:
 ```bash
