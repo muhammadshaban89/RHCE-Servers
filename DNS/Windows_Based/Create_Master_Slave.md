@@ -5,7 +5,7 @@ How to Create Primary & 2ndary DNS in Windows Server 2022:
 |------|--------|-------|
 | Create primary zone | GUI + PowerShell | DNS01 |
 | Create secondary zone | GUI + PowerShell | DNS02 |
-|  Stub zone |  GUI + PowerShell | Any server |
+
 
 Assume:
 
@@ -186,26 +186,6 @@ Both should return the same IP.
 
 ---
 
-## 5. (Optional) Stub zone recap in same style
 
-If you want a **stub zone** on, say, DNS02 pointing to another domain `branch.local` hosted on `10.0.1.10`:
-
-### GUI
-
-1. DNS Manager → **Forward Lookup Zones** → **New Zone…**
-2. **Stub zone** → **Next**.
-3. Zone name: `branch.local` → **Next**.
-4. Master DNS servers: add `10.0.1.10` → **Next** → **Finish**.
-
-### PowerShell
-
-```powershell
-Add-DnsServerStubZone `
-  -Name "branch.local" `
-  -MasterServers 10.0.1.10 `
-  -ZoneFile "branch.local.dns"
-```
-
----
 
 
