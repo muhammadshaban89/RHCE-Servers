@@ -90,6 +90,7 @@ Check the status of the bonding interface to ensure it is working correctly:
        teamdctl bond0 state
   
 This command will display detailed information about the bonding interface, including the status of each slave interface.
+
 ------
 
 Some Importent Commands 
