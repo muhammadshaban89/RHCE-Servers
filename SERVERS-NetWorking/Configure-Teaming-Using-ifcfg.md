@@ -148,7 +148,7 @@ lsmod | grep bonding
 
 There are several ways to confirm that your kernel supports bonding.
 
-### **1. Check if the bonding module exists**
+# 1. Check if the bonding module exists**
 ```bash
 modinfo bonding
 ```
@@ -163,7 +163,7 @@ then bonding is not available (rare on RHEL).
 
 ---
 
-### **2. Check kernel config**
+# 2. Check kernel config**
 RHEL kernels almost always include bonding as a module.  
 You can confirm with:
 
@@ -181,7 +181,7 @@ Meaning bonding is supported as a loadable module.
 
 ---
 
-### **3. Check if bonding interfaces can be created**
+# 3. Check if bonding interfaces can be created**
 If the module is loaded, this directory exists:
 
 ```bash
