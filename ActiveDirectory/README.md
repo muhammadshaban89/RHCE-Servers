@@ -1,4 +1,4 @@
-## 1. What is Active Directory and why it’s used
+## . What is Active Directory and why it’s used
 
 **Active Directory (AD)** is Microsoft’s directory service for centralized identity, authentication, and authorization in a Windows environment.
 
@@ -20,33 +20,9 @@
 
 ---
 
-## 2. Advantages and drawbacks of Active Directory
+## . Advantages and drawbacks of Active Directory
 
-### Advantages
 
-- **Centralized identity:**  
-  One account per user for all domain resources.
-- **Security & control:**  
-  Strong policies, password rules, account lockout, delegation.
-- **Scalability:**  
-  Works from small labs to large enterprises with multiple sites.
-- **Group Policy:**  
-  Massive power to configure and harden clients and servers.
-- **Integration with DNS:**  
-  Service discovery via SRV records, AD-integrated zones.
-
-### Drawbacks
-
-- **Complexity:**  
-  Forests, domains, trusts, sites, FSMO roles—needs proper design.
-- **Dependency on DNS:**  
-  Bad DNS = broken AD.
-- **Single security boundary:**  
-  If a domain/forest is compromised, impact is huge.
-- **Maintenance overhead:**  
-  Backups, replication health, DC patching, time sync, etc.
-- **On-prem focus:**  
-  Needs servers, storage, and care (though it can integrate with cloud).
 
 ---
 
@@ -265,7 +241,7 @@ Domain‑wide:
 
 ---
 
-## 3. Functional levels
+## . Functional levels
 
 # Functional levels
 
@@ -287,7 +263,35 @@ Higher functional levels unlock features and drop support for older DC versions.
 
 ---
 
-## 4. What is AD DS (Active Directory Domain Services)
+### Advantages
+
+- **Centralized identity:**  
+  One account per user for all domain resources.
+- **Security & control:**  
+  Strong policies, password rules, account lockout, delegation.
+- **Scalability:**  
+  Works from small labs to large enterprises with multiple sites.
+- **Group Policy:**  
+  Massive power to configure and harden clients and servers.
+- **Integration with DNS:**  
+  Service discovery via SRV records, AD-integrated zones.
+
+### Drawbacks
+
+- **Complexity:**  
+  Forests, domains, trusts, sites, FSMO roles—needs proper design.
+- **Dependency on DNS:**  
+  Bad DNS = broken AD.
+- **Single security boundary:**  
+  If a domain/forest is compromised, impact is huge.
+- **Maintenance overhead:**  
+  Backups, replication health, DC patching, time sync, etc.
+- **On-prem focus:**  
+  Needs servers, storage, and care (though it can integrate with cloud).
+
+  -----
+  
+## . What is AD DS (Active Directory Domain Services)
 
 **AD DS** is the **server role** that implements Active Directory on Windows Server.
 
@@ -304,7 +308,7 @@ So: **Active Directory** is the concept/service; **AD DS** is the Windows Server
 
 ---
 
-## 5. Prerequisites to install AD DS on Windows Server 2022
+## . Prerequisites to install AD DS on Windows Server 2022
 
 Before promoting a server to a Domain Controller:
 
@@ -330,7 +334,7 @@ Before promoting a server to a Domain Controller:
 
 ---
 
-## 6. Step-by-step: Install AD DS on Windows Server 2022 (GUI)
+## Step-by-step: Install AD DS on Windows Server 2022 (GUI)
 
 This is for **creating a new forest** (e.g., `lab.local`) on a fresh Windows Server 2022 with Desktop Experience. Steps are based on the standard Server Manager workflow.   
 
