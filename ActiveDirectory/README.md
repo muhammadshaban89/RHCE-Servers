@@ -236,9 +236,7 @@ Domain‑wide:
 
 ---
 
-## . Functional levels
-
-# Functional levels
+##  Functional levels
 
 Functional levels define which **AD features** are available, based on the **minimum Windows Server version** of domain controllers.
 
