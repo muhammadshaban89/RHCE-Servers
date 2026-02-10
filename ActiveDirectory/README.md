@@ -238,3 +238,10 @@ At this point, your **first Domain Controller + DNS** is ready. You can now:
 - Create OUs, users, and groups.  
 - Start designing Group Policies.
 
+  ------
+
+👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
+
+👉Youtube Channel: http://www.youtube.com/@engrm.shaban5099
+
+----
