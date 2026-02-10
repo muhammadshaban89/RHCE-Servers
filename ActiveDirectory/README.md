@@ -50,28 +50,224 @@
 
 ---
 
-## 3. Forest, domains, and functional levels
+# Major Components of Active Directory
 
-### Forest
+1. **Domain**
+A domain is the core security boundary inside AD.  
+It contains:
 
-- **Forest:**  
-  The top-level security boundary in AD.  
-  It contains one or more domains that share:
-  - A common schema  
-  - A global catalog  
-  - Trust relationships  
-- Usually, modern environments use **one forest, one domain** unless there’s a strong reason otherwise.
+- Users  
+- Computers  
+- Groups  
+- OUs  
+- Policies  
+- Domain controllers  
 
-### Domain
+Example:  
+`lab.local`
 
-- Logical partition inside a forest.  
-- Has its own:
-  - Domain controllers  
-  - Policies  
-  - Security groups  
-- Namespace example: `corp.local`, `lab.domain.com`.
+A domain is where authentication and authorization happen.
 
-### Functional levels
+---
+
+2. **Domain Controllers (DCs)**
+Servers that run **AD DS** and store the AD database (**NTDS.DIT**).
+
+They provide:
+
+- Kerberos authentication  
+- NTLM fallback  
+- Replication  
+- Group Policy processing  
+- DNS integration  
+
+Every domain must have at least one DC.
+
+---
+
+3. **Forest**
+The **top‑level container** of the entire AD environment.
+
+A forest contains:
+
+- One or more domains  
+- A shared schema  
+- A shared global catalog  
+- Trust relationships  
+
+Most modern environments use **one forest, one domain**.
+
+---
+
+4. **Trees**
+A tree is a group of domains in a hierarchical namespace.
+
+Example:
+```
+corp.local
+sales.corp.local
+hr.corp.local
+```
+
+Trees are rarely used today unless you have complex organizational needs.
+
+---
+
+5. **Organizational Units (OUs)**
+Logical containers used to organize objects and apply policies.
+
+Used for:
+
+- Group Policy  
+- Delegation  
+- Clean structure  
+
+Example:
+```
+OU=Servers
+OU=Workstations
+OU=Users
+```
+
+---
+
+6. **Schema**
+The blueprint of Active Directory.
+
+It defines:
+
+- Object types (users, computers, groups)  
+- Attributes (name, password, SID, email, etc.)  
+
+The schema is shared across the entire forest.
+
+---
+
+7. **Global Catalog (GC)**
+A partial, read‑optimized copy of all objects in the forest.
+
+Used for:
+
+- Universal group membership  
+- Forest‑wide searches  
+- Logon authentication  
+
+Usually the first DC in a domain is a GC server.
+
+---
+
+8. **Sites and Subnets**
+Used to optimize **replication** and **authentication** based on physical network layout.
+
+- Sites = physical locations  
+- Subnets = IP ranges  
+- Site links = replication paths  
+
+Example:
+```
+Site: Riyadh
+Site: Jeddah
+Site: Abha
+```
+
+---
+
+9. **DNS (Domain Name System)**
+Active Directory **depends heavily** on DNS.
+
+AD uses DNS for:
+
+- Locating domain controllers  
+- Kerberos service discovery  
+- Replication  
+- Client logon  
+
+AD‑integrated DNS zones replicate automatically between DCs.
+
+---
+
+10. **Group Policy (GPOs)**
+Centralized configuration and security management.
+
+Used for:
+
+- Password policies  
+- Software deployment  
+- Security hardening  
+- Login scripts  
+- Firewall rules  
+
+GPOs are linked to **OUs**, **domains**, or **sites**.
+
+---
+
+11. **NTDS.DIT (AD Database)**
+The actual database file storing:
+
+- Users  
+- Groups  
+- Computers  
+- Password hashes  
+- Replication metadata  
+- Schema  
+
+Location:
+```
+C:\Windows\NTDS\NTDS.DIT
+```
+
+---
+
+12. **SYSVOL**
+A shared folder on every DC.
+
+Contains:
+
+- Group Policy templates  
+- Login scripts  
+- Replication data  
+
+Replicated using DFS‑R.
+
+---
+
+13. **FSMO Roles (Flexible Single Master Operations)**
+Special roles that ensure consistency.
+
+Forest‑wide:
+- Schema Master  
+- Domain Naming Master  
+
+Domain‑wide:
+- RID Master  
+- PDC Emulator  
+- Infrastructure Master  
+
+---
+
+# Summary Table
+
+| Component | Purpose |
+|----------|---------|
+| **Domain** | Security boundary, identity management |
+| **Domain Controller** | Runs AD DS, stores NTDS.DIT |
+| **Forest** | Top-level AD container |
+| **Tree** | Hierarchical domain structure |
+| **OU** | Organize objects, apply GPOs |
+| **Schema** | Defines object types/attributes |
+| **Global Catalog** | Forest-wide search, logon |
+| **Sites/Subnets** | Replication and authentication optimization |
+| **DNS** | Service discovery, DC location |
+| **GPOs** | Centralized configuration |
+| **NTDS.DIT** | AD database |
+| **SYSVOL** | GPO templates, scripts |
+| **FSMO Roles** | Special AD operations |
+
+---
+
+## 3. Functional levels
+
+# Functional levels
 
 Functional levels define which **AD features** are available, based on the **minimum Windows Server version** of domain controllers.
 
