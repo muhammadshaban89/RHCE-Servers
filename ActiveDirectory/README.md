@@ -18,11 +18,6 @@
 - **Group Policy** for security baselines and configuration.  
 - **Integration** with many enterprise apps, file servers, print servers, etc.
 
----
-
-## . Advantages and drawbacks of Active Directory
-
-
 
 ---
 
@@ -262,6 +257,10 @@ On **Windows Server 2022**, you typically choose:
 Higher functional levels unlock features and drop support for older DC versions.
 
 ---
+---
+
+## . Advantages and drawbacks of Active Directory
+
 
 ### Advantages
 
