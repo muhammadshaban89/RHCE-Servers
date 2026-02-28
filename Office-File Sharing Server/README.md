@@ -1,6 +1,61 @@
 
 Here is **full, clean, detailed, professional guide** for building a **Windows Server 2022 office file‑sharing server** with **upload‑only (no edit/no delete)** permissions.
 
+Office File‑Sharing Server Architecture Diagram
+-----------------
+
+                           ┌──────────────────────────────┐
+                           │      Internet (Ignored)       │
+                           │   No VPN / No Cloud Access    │
+                           └──────────────────────────────┘
+                                         │
+                                         │
+                               (Local LAN Only)
+                                         │
+                                         ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                           Office Local Network (LAN)                         │
+│                                                                              │
+│   ┌──────────────────────┐         ┌──────────────────────┐                 │
+│   │   User PC #1         │         │   User PC #2         │                 │
+│   │  (FS_Users group)    │  ...    │  (FS_Users group)    │   ...           │
+│   │  Upload / Read Only  │         │  Upload / Read Only  │                 │
+│   └──────────────────────┘         └──────────────────────┘                 │
+│            │                                   │                            │
+│            └─────────────── LAN Switch / Router ────────────────┐           │
+│                                                                  │           │
+└──────────────────────────────────────────────────────────────────┼───────────┘
+                                                                   │
+                                                                   ▼
+                     ┌──────────────────────────────────────────────┐
+                     │         Windows Server 2022 (OFFICE-SERVER)   │
+                     │  Static IP: 192.168.1.10                      │
+                     │                                              │
+                     │  ┌────────────────────────────────────────┐  │
+                     │  │              File Services             │  │
+                     │  │  Shared Folder: D:\CompanyData         │  │
+                     │  │  Share Name: \\OFFICE-SERVER\CompanyData│ │
+                     │  └────────────────────────────────────────┘  │
+                     │                                              │
+                     │  ┌────────────────────────────────────────┐  │
+                     │  │          Security Structure            │  │
+                     │  │                                        │  │
+                     │  │  Groups:                               │  │
+                     │  │   - FS_Admins → Full Control           │  │
+                     │  │   - FS_Users  → Upload + Read Only     │  │
+                     │  │                                        │  │
+                     │  │  NTFS Rules:                           │  │
+                     │  │   - Allow: Read, Write, Create Files   │  │
+                     │  │   - Deny: Delete, Modify, Rename       │  │
+                     │  └────────────────────────────────────────┘  │
+                     │                                              │
+                     │  ┌────────────────────────────────────────┐  │
+                     │  │            Shadow Copies               │  │
+                     │  │   Automatic snapshots for recovery     │  │
+                     │  └────────────────────────────────────────┘  │
+                     └──────────────────────────────────────────────┘
+
+
 ---
 
 # **Complete Step‑by‑Step Guide: Windows Server 2022 Office File‑Sharing Server**  
