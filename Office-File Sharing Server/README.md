@@ -55,9 +55,6 @@ Office File‑Sharing Server Architecture Diagram
                      │  └────────────────────────────────────────┘  │
                      └──────────────────────────────────────────────┘
 
-
----
-
 # **Complete Step‑by‑Step Guide: Windows Server 2022 Office File‑Sharing Server**  
 **Goal:**  
 - 15 office users (same LAN)  
