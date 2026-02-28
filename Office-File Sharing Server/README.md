@@ -3,7 +3,7 @@ Here is **full, clean, detailed, professional guide** for building a **Windows S
 
 Office File‑Sharing Server Architecture Diagram
 -----------------
-
+```
                            ┌──────────────────────────────┐
                            │      Internet (Ignored)       │
                            │   No VPN / No Cloud Access    │
@@ -54,6 +54,8 @@ Office File‑Sharing Server Architecture Diagram
                      │  │   Automatic snapshots for recovery     │  │
                      │  └────────────────────────────────────────┘  │
                      └──────────────────────────────────────────────┘
+```
+---------
 
 # **Complete Step‑by‑Step Guide: Windows Server 2022 Office File‑Sharing Server**  
 **Goal:**  
