@@ -55,41 +55,36 @@ Office File‑Sharing Server Architecture Diagram
                      │  └────────────────────────────────────────┘  │
                      └──────────────────────────────────────────────┘
 ```
----------
 
-# **Complete Step‑by‑Step Guide: Windows Server 2022 Office File‑Sharing Server**  
-**Goal:**  
-- 15 office users (same LAN)  
-- Upload / read / download allowed  
-- **No edit**  
-- **No delete**  
-- Only admin has full control  
-- No VPN / no cloud  
+
+# **Windows Server 2022 – Office File‑Sharing Server (Complete SOP)**  
+**Scenario:**  
+- 15 office users on the same LAN  
+- Users can **upload / read / download**  
+- Users **cannot edit, rename, or delete**  
+- Only Admin has full control  
+- No VPN, no cloud  
 
 ---
 
 ## **1. Install Windows Server 2022**
-1. Boot from the Windows Server USB installer.  
-2. Choose **Windows Server 2022 Standard (Desktop Experience)**.  
-3. Install on the SSD (recommended for OS).  
-4. Set the Administrator password.  
-5. After first login, rename the server:
+1. Boot from the installation USB.  
+2. Select **Windows Server 2022 Standard (Desktop Experience)**.  
+3. Install on the SSD.  
+4. Set Administrator password.  
+5. Rename the server:
 
-**Path:**  
 `Server Manager → Local Server → Computer Name → Change`
 
-**Name:**  
-`OFFICE-SERVER`
-
-Restart the server.
+**Name:** `OFFICE-SERVER`  
+Restart.
 
 ---
 
-## **2. Configure Static IP (Critical Step)**
-**Path:**  
+## **2. Configure Static IP**
 `Control Panel → Network and Sharing Center → Change adapter settings → Ethernet → IPv4`
 
-**Example configuration:**
+Example:
 ```
 IP Address: 192.168.1.10
 Subnet Mask: 255.255.255.0
@@ -97,21 +92,17 @@ Gateway: 192.168.1.1
 DNS: 192.168.1.1
 ```
 
-A static IP ensures all users can always reach the server.
-
 ---
 
 ## **3. Create Local User Accounts**
-**Path:**  
 `Computer Management → Local Users and Groups → Users`
 
 Create one user per employee:
-
-Examples:
 ```
 user1
 user2
 user3
+...
 ```
 
 Uncheck:
@@ -122,24 +113,31 @@ User must change password at next logon
 ---
 
 ## **4. Create Security Groups**
-**Path:**  
 `Computer Management → Local Users and Groups → Groups`
 
-Create two groups:
+Create:
+| Group Name | Purpose |
+|-----------|----------|
+| FS_Admins | Full control |
+| FS_Users  | Regular employees |
 
-| Group Name   | Purpose |
-|--------------|---------|
-| FS_Admins    | Full control |
-| FS_Users     | Regular employees |
+---
 
-Add:
-- All employees → **FS_Users**  
-- IT/Admin → **FS_Admins**
+## **4.1 Add Users to Groups (Missing Step Added)**
+This step must happen **before** configuring the shared folder.
+
+### **Add employees to FS_Users**
+`Groups → FS_Users → Add → enter user1, user2, user3…`
+
+### **Add IT/Admin to FS_Admins**
+`Groups → FS_Admins → Add → enter admin accounts`
+
+This ensures permissions work correctly later.
 
 ---
 
 ## **5. Create the Shared Folder**
-Create a data folder on the data disk (D: recommended):
+Create the data directory on the data disk:
 
 ```
 D:\CompanyData
@@ -148,7 +146,7 @@ D:\CompanyData
 ---
 
 ## **6. Configure Share Permissions**
-Right‑click the folder → **Properties → Sharing → Advanced Sharing**
+Right‑click folder → **Properties → Sharing → Advanced Sharing**
 
 1. Check **Share this folder**  
 2. Share name:
@@ -163,21 +161,21 @@ Everyone
 ```
 
 Add:
-
-| Group       | Share Permission |
-|-------------|------------------|
-| FS_Admins   | Full Control     |
-| FS_Users    | Change + Read    |
+| Group | Share Permission |
+|-------|------------------|
+| FS_Admins | Full Control |
+| FS_Users  | Change + Read |
 
 Click **OK**.
 
 ---
 
-## **7. Configure NTFS Security (MOST IMPORTANT)**  
-This is what enforces **upload allowed**, but **no edit**, **no rename**, **no delete**.
+## **7. Configure NTFS Security (Critical)**  
+This enforces **upload allowed**, but **no edit**, **no rename**, **no delete**.
+
+---
 
 ### **Step 1 — Disable Inheritance**
-**Path:**  
 `Properties → Security → Advanced`
 
 Click:
@@ -209,7 +207,7 @@ This folder, subfolders and files
 ### **Step 3 — Add Employee Permissions**
 Add → **FS_Users**
 
-Allow ONLY these permissions:
+Allow ONLY:
 ```
 Traverse folder / execute
 List folder / read data
@@ -230,12 +228,9 @@ This folder, subfolders and files
 
 ### **Step 4 — Deny Delete (Critical)**
 Add → **FS_Users**  
-Change **Type** to:  
-```
-DENY
-```
+Change Type → **DENY**
 
-Deny these:
+Deny:
 ```
 Delete
 Delete subfolders and files
@@ -250,7 +245,7 @@ Click **OK → OK → OK**.
 
 ---
 
-## **8. User Experience (Result)**
+## **8. User Experience (Final Behavior)**
 | Action | Result |
 |--------|--------|
 | Upload new file | ✔ Allowed |
@@ -261,28 +256,23 @@ Click **OK → OK → OK**.
 | Delete | ❌ Blocked |
 | Admin delete | ✔ Allowed |
 
-This matches your exact requirement.
-
 ---
 
 ## **9. How Users Access the Shared Folder**
-On each user PC:
+On each PC:
 
 Press:
 ```
 WIN + R
 ```
-Type:
+Enter:
 ```
 \\OFFICE-SERVER\CompanyData
 ```
 
-Enter their username/password.
+### **Map Network Drive**
+Right‑click → **Map Network Drive**
 
-### **Map Network Drive (Recommended)**
-Right‑click the folder → **Map Network Drive**
-
-Choose:
 ```
 Drive letter: Z:
 Reconnect at sign-in: ✔
@@ -291,30 +281,23 @@ Reconnect at sign-in: ✔
 ---
 
 ## **10. Enable File Recovery (Shadow Copies)**
-**Path:**  
 `This PC → Right‑click D: → Configure Shadow Copies`
 
-Enable Shadow Copies.
-
-Recommended schedule:
+Enable and schedule:
 ```
 Twice per day
 ```
 
-Admins can restore deleted or overwritten files instantly.
+Admins can restore deleted/overwritten files instantly.
 
 ---
 
-# **Your Server Is Now:**
-- Local  
-- Secure  
-- No cloud  
-- No VPN  
-- No accidental deletion  
-- Admin‑controlled  
-- Perfect for office environments  
+# **Your SOP is now complete and corrected.**  
+The missing step (adding users to groups) is now properly included and placed in the correct order.
 
 ---
+
+
 
 👉Follow my LinkdIn Profile: www.linkedin.com/in/muhammad-shaban-45577719a
 
