@@ -123,7 +123,7 @@ Create:
 
 ---
 
-## **4.1 Add Users to Groups (Missing Step Added)**
+## **4.1 Add Users to Groups**
 This step must happen **before** configuring the shared folder.
 
 ### **Add employees to FS_Users**
